@@ -19,11 +19,11 @@ lastuser = ""
 print("Converting....")
 text.append("You: ...")
 for msg in convoJSON["histories"]["histories"][number]["msgs"]: # [0]["msgs"][0]
-    if(msg["src"]["user"]["username"] != "[NAME_REDACTED]" and lastuser != "[NAME_REDACTED]" and text[len(text) - 1] != "You: ..."):
+    if(msg["src"]["user"]["username"] != "[USERNAME_REDACTED]" and lastuser != "[USERNAME_REDACTED]" and text[len(text) - 1] != "You: ..."):
         text.append("You: ...")
 
-    if (msg["src"]["user"]["username"] != "[NAME_REDACTED]"):
-        text.append(["src"]["user"]["username"] + ": " + msg["text"])
+    if (msg["src"]["user"]["username"] != "[USERNAME_REDACTED]"):
+        text.append(msg["src"]["user"]["first_name"] + ": " + msg["text"])
     else:
         text.append("You: " + msg["text"])
     lastuser = msg["src"]["user"]["username"]
